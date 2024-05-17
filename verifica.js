@@ -239,18 +239,31 @@ console.log(countMovies(movies)); */
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
 */
-function onlyTheYears(movies) {
+/*function onlyTheYears(movies) {
     return movies.map(movie=> movie.Year);
 }
-console.log(onlyTheYears(movies))
+console.log(onlyTheYears(movies))/*
 
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
 */
+/*function onlyInLastMillennium(movies) {
+  return movies.filter(movie=>movie.Year< '2000');
+  
+}
+console.log(onlyInLastMillennium(moviees))
+
 
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
+/*function sumAllTheYears(movies) {
+  return movies.reduce((sum, movie) => sum + Number(movie.Year), 0);
+}/*
+
+// Test della funzione "sumAllTheYears"
+console.log(sumAllTheYears(moviees)); // Output: somma di tutti gli anni di produzione dei film
+
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
@@ -260,6 +273,18 @@ console.log(onlyTheYears(movies))
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
+/*function searchAndDivide(moviees) {
+  const match = moviees.filter (moviees => moviees.Title.toLowerCase().includes(searchstring.toLowerCase()))
+  const unmatch = moviees.filter(moviees=> moviees.title.toLowerCase().includes(searchstring.toLowerCase()))
+return{
+  match:match,
+  unmatch: unmatch
+};
+}
+console.log(searchAndDivide("Lord"));
+console.log(searchAndDivide("Avengers"));/*
+
+
 
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
@@ -270,30 +295,142 @@ console.log(onlyTheYears(movies))
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
+function selectContainerElement() {
+  // Seleziona l'elemento con id "container"
+  const containerElement = document.getElementById('container');
+  
+  // Verifica se l'elemento è stato trovato
+  if (containerElement) {
+    console.log('Elemento con id "container" trovato:', containerElement);
+  } else {
+    console.log('Elemento con id "container" non trovato.');
+  }
+}
+
+// Chiamata alla funzione
+selectContainerElement();
+
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
+function selectTdElements() {
+  // Seleziona tutti gli elementi <td>
+  const tdElements = document.querySelectorAll('td');
+  
+  // Verifica se sono stati trovati elementi <td>
+  if (tdElements.length > 0) {
+    console.log('Elementi <td> trovati:', tdElements);
+  } else {
+    console.log('Nessun elemento <td> trovato.');
+  }
+}
+
+// Chiamata alla funzione
+selectTdElements();
+
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
+function printTdText() {
+  // Seleziona tutti gli elementi <td>
+  const tdElements = document.querySelectorAll('td');
+  
+  // Itera su ogni elemento <td>
+  tdElements.forEach(function(td) {
+    // Stampare il testo contenuto in ogni elemento <td>
+    console.log("printed td non trovato",td.textContent);
+  });
+}
+
+// Chiamata alla funzione
+printTdText();
+
+
+
+
 
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
+function addRedBackgroundToLinks() {
+  // Seleziona tutti gli elementi <a>
+  const linkElements = document.querySelectorAll('a');
+  
+  // Itera su ogni elemento <a>
+  linkElements.forEach(function(link) {
+    // Aggiungi il background rosso
+    link.style.backgroundColor = 'red';
+  });
+}
+
+// Chiamata alla funzione
+addRedBackgroundToLinks();
+
+
+
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+/* function addNewListItem() {
+  // Crea un nuovo elemento <li>
+  const addnewListItem = document.createElement('li');
+  
+  // Crea un nodo di testo da inserire nell'elemento <li>
+  const textNode = document.createTextNode('Nuovo elemento');
+  
+  // Aggiungi il nodo di testo all'elemento <li>
+  addnewListItem.appendChild(textNode);
+  
+  // Seleziona la lista non ordinata con id "myList"
+  const myList = document.getElementById('myList');
+  
+  // Aggiungi il nuovo elemento alla lista non ordinata
+  myList.appendChild(newListItem);
+}
+
+// Chiamata alla funzione
+addNewListItem()/*
+
+
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
+/*function emptyList() {
+  // Seleziona la lista non ordinata con id "myList"
+  const myList = document.getElementById('myList');
+  
+  // Rimuovi tutti i figli della lista
+  myList.innerHTML = '';
+}
+
+// Chiamata alla funzione
+emptyList();/*
+
+
+
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+function addClassToTrElements() {
+  // Seleziona tutti gli elementi <tr>
+  const trElements = document.querySelectorAll('tr');
+  
+  // Itera su ogni elemento <tr>
+  trElements.forEach(function(tr) {
+    // Aggiungi la classe CSS "test" all'elemento <tr>
+    tr.classList.add('test');
+  });
+}
+
+// Chiamata alla funzione
+addClassToTrElements();
+
+
 
 // [EXTRA] JS Avanzato
 
@@ -327,7 +464,7 @@ console.log(onlyTheYears(movies))
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
-const movies = [
+const moviees = [
     {
       Title: 'The Lord of the Rings: The Fellowship of the Ring',
       Year: '2001',
